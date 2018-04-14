@@ -1,0 +1,147 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Instrucciones" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="instructions">
+        <p>
+            {% blocktrans trimmed %}
+                Para esta tarea, usted seleccionará entre seis posibles loterías una lotería a
+                ser jugada. Las seis loterías posibles se muestran a continuación:
+            {% endblocktrans %}
+        </p>
+
+        <!-- Codes by HTML.am -->
+
+        <!-- CSS Code -->
+        <style type="text/css" scoped>
+        table.GeneratedTable {
+        width:100%;
+        background-color:#FFFFFF;
+        border-collapse:collapse;border-width:1px;
+        border-color:#000000;
+        border-style:solid;
+        color:#000000;
+        }
+
+        table.GeneratedTable td, table.GeneratedTable th {
+        border-width:1px;
+        border-color:#000000;
+        border-style:solid;
+        padding:3px;
+        }
+
+        table.GeneratedTable thead {
+        background-color:#CCCCFF;
+        }
+        </style>
+
+        <!-- HTML Code -->
+        <table class="GeneratedTable">
+        <thead>
+        <tr>
+        <th>Opción</th>
+        <th>Pago bajo</th>
+        <th>Pago alto</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>1</td>
+        <td>18</td>
+        <td>18</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>14</td>
+        <td>26</td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>10</td>
+        <td>34</td>
+        </tr>
+        <tr>
+        <td>4</td>
+        <td>6</td>
+        <td>42</td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>2</td>
+        <td>50</td>
+        </tr>
+        <tr>
+        <td>6</td>
+        <td>-2</td>
+        <td>54</td>
+        </tr>
+        </tbody>
+        </table>
+
+
+
+
+        <p style="margin-top:1%">
+            {% blocktrans trimmed %}
+
+                Cada posible lotería tiene dos resultados: ALTO y BAJO. Ambos resultados tiene
+                igual probabilidad de ser seleccionados (50% cada uno).
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Luego de seleccionar una lotería, se selecionará aleatoriamente cual de los pagos (alto o bajo)
+                recibirá. En la pantalla de resultados se observará el número de dado obtenido, y los pagos
+                correspondientes.
+            {% endblocktrans %}
+        </p>
+
+        <ul type="square">
+            <li>En caso salga 1, 2, 3, 4 ó 5, usted recibirá el pago BAJO.</li>
+            <li>En caso salga 6, 7, 8, 9 ó 10 usted recibirá el pago ALTO.</li>
+        </ul>
+
+        <p>
+            {% blocktrans trimmed %}
+                Usted debe seleccionar solo una de las loterías. Para seleccionar una
+                lotería, marque el círculo correspondiente.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                La ganancia del juego estará determinada por dos factores:
+
+            <ul type="square">
+                <li>Cuál de las seis loterías fue seleccionada</li>
+                <li>Cuál de los resultados se obtuvo del dado virtual</li>
+            </ul>
+            {% endblocktrans %}
+        </p>
+
+        <br/>
+        <button class="otree-btn-next btn btn-primary next-button otree-next-button">Next</button>
+
+    </div>
+{% endblock %}

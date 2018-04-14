@@ -1,0 +1,70 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Instrucciones" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="instructions">
+        <p>
+            {% blocktrans trimmed %}
+                En la siguiente pantalla, usted verá una tabla de {{ num_rows }}x{{ num_cols }} que
+                contiene {{ num_boxes }} cajas.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Podrá escribir en un recuadro la cantidad de cajas que desea recolectar. Estas cajas
+                serán seleccionadas de manera aleatoria del total de {{ num_boxes }}. Las cajas recolectadas
+                serán marcadas con una 'x'. Por cada caja recolectada, usted gana {{ box_value }}.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Detrás de una de las cien cajas, se oculta una bomba que destruye todo lo que ha recolectado.
+                El resto de las {{ num_nobomb }} cajas valen  {{ box_value }} cada una.
+                Usted no sabe donde está ubicada la bomba.
+                Usted solo sabe que la bomba puede estar en cualquiera de las {{ num_boxes }} con igual probabilidad.
+                En cada ronda del juego, la bomba cambia de ubicación.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                La tarea consiste en escoger cuantas cajas recolectar. Luego de escribir la cantidad a recolectar,
+                debe presionar el botón 'Detener' y luego 'Resolver'. Si seleccionó la caja donde estaba oculta
+                la bomba, esta explotará y ganará cero en esta ronda.
+                Si no selecciona la bomba (ninguna caja se marca de rojo), usted gana la cantidad de cajas recolectadas.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Al final de la tarea, se muestra el contenido de las cajas al apretar el botón 'Resolver'.
+                Un signo de dólar o un símbolo de fuego (para la bomba) ses mostrarán en cada una de las cajas
+                recolectadas.
+            {% endblocktrans %}
+        </p>
+
+        <br/>
+        {% next_button %}
+
+    </div>
+{% endblock %}

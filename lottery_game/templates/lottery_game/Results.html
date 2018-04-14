@@ -1,0 +1,26 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+{% block title %} Resultados de esta ronda {% endblock %}
+
+{% block content %}
+
+    <p>Elegiste la lotería {{ player.loteria }}. El pago alto de la lotería es {{ high }}
+        y el pago bajo es {{ low }}</p>
+
+    <p>El número aleatorio fue {{ player.coin }}.
+        {% if player.coin > 5 %}
+            Has obtenido un pago alto.
+        {% else %}
+            Has obtenido un pago bajo.
+        {% endif %}
+    </p>
+
+    <p>Tu pago esta ronda fue de {{ player.payoff }}.</p>
+
+
+
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button">Siguiente</button>
+{% endblock %}

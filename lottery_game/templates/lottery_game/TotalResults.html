@@ -1,0 +1,33 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+{% block title %} Resumen del resultado del juego juego {% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <tr>
+            <th>Ronda</th>
+            <th>Player and outcome</th>
+        </tr>
+        {% for p in player_in_all_rounds %}
+            <tr>
+                <td>{{ p.round_number }}</td>
+                <td>
+                    Tu pago esta ronda fue de {{ p.payoff }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        Your total payoff is therefore {{ total_payoff }}.
+    </p>
+
+
+    Muchas gracias por tu participación en este piloto experimental!
+
+{% endblock %}
+

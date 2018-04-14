@@ -1,0 +1,74 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Ingreso de datos referenciales
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Aquí se encuentran ciertos rasgos de personalidad que pueden o no aplicar. Por favor escriba un número
+        junto a cada afirmación para indicar hasta que nivel usted está de acuerdo o desacuerdo con cada afirmación. La
+        escala numérica es la siguiente:
+    </p>
+
+    <!-- Codes by HTML.am -->
+
+    <!-- CSS Code -->
+    <style type="text/css" scoped>
+    table.GeneratedTable {
+    width:100%;
+    background-color:#FFFFFF;
+    border-collapse:collapse;border-width:1px;
+    border-color:#000000;
+    border-style:solid;
+    color:#000000;
+    }
+
+    table.GeneratedTable td, table.GeneratedTable th {
+    border-width:1px;
+    border-color:#000000;
+    border-style:solid;
+    padding:3px;
+    }
+
+    table.GeneratedTable thead {
+    background-color:#FFFFCC;
+    }
+    </style>
+
+    <!-- HTML Code -->
+    <table class="GeneratedTable">
+    <thead>
+    <tr>
+    <th>Completamente en desacuerdo</th>
+    <th>Parcialmente en desacuerdo</th>
+    <th>Ligeramente en desacuerdo</th>
+    <th>Ni acuerdo ni en desacuerdo</th>
+    <th>Ligeramente de acuerdo</th>
+    <th>Parcialmente de acuerdo</th>
+    <th>Completamente de acuerdo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    </tr>
+    </tbody>
+    </table>
+
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+    {% next_button %}
+
+{% endblock %}
