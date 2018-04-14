@@ -38,37 +38,34 @@
     }
     </style>
 
-    <!-- HTML Code -->
+
     <table class="GeneratedTable">
-    <thead>
+            <thead>
     <tr>
-    <th>Completamente en desacuerdo</th>
-    <th>Parcialmente en desacuerdo</th>
-    <th>Ligeramente en desacuerdo</th>
-    <th>Ni acuerdo ni en desacuerdo</th>
-    <th>Ligeramente de acuerdo</th>
-    <th>Parcialmente de acuerdo</th>
-    <th>Completamente de acuerdo</th>
+        <th>Característica</th>
+        <th>Completamente en desacuerdo</th>
+        <th>Parcialmente en desacuerdo</th>
+        <th>Ligeramente en desacuerdo</th>
+        <th>Ni acuerdo ni en desacuerdo</th>
+        <th>Ligeramente de acuerdo</th>
+        <th>Parcialmente de acuerdo</th>
+        <th>Completamente de acuerdo</th>
     </tr>
     </thead>
-    <tbody>
-    <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    </tr>
-    </tbody>
+        {% for field in form %}
+            <tr>
+                <td> {{ field.label }} </td>
+            {% for choice in field %}
+                <td>{{ choice }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
     </table>
 
+<p>
 
-    {% for field in form %}
-        {% formfield field %}
-    {% endfor %}
-
+</p>
     {% next_button %}
 
 {% endblock %}
+

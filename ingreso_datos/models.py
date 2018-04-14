@@ -10,7 +10,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     field_args = dict(
-          choices=[1, 2, 3, 4, 5, 6, 7], widget=widgets.RadioSelectHorizontal, blank=True, initial=1
+          choices=[1, 2, 3, 4, 5, 6, 7], widget=widgets.RadioSelectHorizontal, blank=True, 
         # choices=[[1, 'Completamente en desacuerdo'], [2, 'Parcialmente en desacuerdo'],
         #          [3, 'Ligeramente en desacuerdo'], [4, 'Ni acuerdo ni en desacuerdo'],
         #          [5, 'Ligeramente de acuerdo'], [6, 'Parcialmente de acuerdo'],
