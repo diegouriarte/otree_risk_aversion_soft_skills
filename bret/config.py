@@ -28,8 +28,8 @@ class Constants(BaseConstants):
     # box height and box width in pixels
     # make sure that the size of the boxes fits the screen of the device
     # note that the layout is responsive, i.e. boxes will break into new rows if they don't fit
-    box_height = '50px'
-    box_width = '50px'
+    box_height = '25px'
+    box_width = '25px'
 
     # number of rounds to be played
     num_rounds = 5
