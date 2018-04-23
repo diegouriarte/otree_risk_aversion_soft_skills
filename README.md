@@ -6,6 +6,6 @@ oTree framework was used to implement the interactive experiment. Information ab
 
 This experiment implements a task of choosing a lottery in order to measure risk aversion. Additionally, the Bomb Risk Elicitation Task is also used, as implemented [here](http://www.holzmeister.biz/).
 
-The interface in the experiment is in Spanish.
+The interface of the experiment is in Spanish.
 
 All the files related to the data analysis (using Rmarkdown) and the database obtained from the pilot experiment can be found in the data_analysis directory.
